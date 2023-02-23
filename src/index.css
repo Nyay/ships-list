@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Montserrat+Alternates&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+:root {
+    --main-background-blue: #102031;
+    --menu-grey: #333333;
+    --light-white: #FFFFFF;
+    --dark-white: #d3d3d3;
+    --menu-cyan: #00cccc;
+    --menu-cyan-transparent: #00cccc50;
+
+    --button-light-orange: #FD6200;
+    --button-dark-orange: #E12E00;
+
+    --nav-transition-timeout: 200ms;
+
+    background: var(--main-background-blue);
+    font-family: 'Roboto Condensed', sans-serif;;
+}
+
+body {
+    margin: 0;
+}
