@@ -1,11 +1,14 @@
 import './App.css'
-import {Menu} from "./components/Menu/Menu";
+import { Menu, ShipDisplay, ShipOptions } from './components';
+import React from 'react';
 
 function App() {
 
   return (
     <div className="App">
-      <Menu />
+        <Menu />
+        <ShipOptions />
+        <ShipDisplay />
     </div>
   )
 }

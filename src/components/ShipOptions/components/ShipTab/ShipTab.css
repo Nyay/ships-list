@@ -1,0 +1,18 @@
+.ship-tab {
+    min-height: 60px;
+    padding: 16px 56px;
+    font-size: 24px;
+    color: var(--dark-white);
+    box-sizing: border-box;
+    opacity: 1;
+    transition: all 200ms ease-in;
+}
+
+.ship-tab:hover {
+    color: var(--light-white);
+}
+
+.current-ship {
+    background: var(--selected-tab-grey);
+    color: var(--light-white);
+}
