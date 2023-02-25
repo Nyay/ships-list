@@ -4,19 +4,24 @@
     --main-background-blue: #102031;
     --menu-grey: #333333;
     --light-white: #FFFFFF;
-    --dark-white: #d3d3d3;
+    --dark-white: #9a9a9a;
     --menu-cyan: #00cccc;
     --menu-cyan-transparent: #00cccc50;
 
     --button-light-orange: #FD6200;
     --button-dark-orange: #E12E00;
 
+    --light-black: #101010;
+
     --nav-transition-timeout: 200ms;
+
+    --selected-tab-grey: #4A4A4A;
 
     background: var(--main-background-blue);
     font-family: 'Roboto Condensed', sans-serif;;
 }
 
-body {
+html, body, #root {
+    height: 100%;
     margin: 0;
 }
