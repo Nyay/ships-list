@@ -27,7 +27,9 @@ export const ShipOptions = () => {
                     id: value,
                     type: tagList[0],
                     name: data.data[value].localization.shortmark.ru,
-                    description: data.data[value].localization.ru
+                    description: data.data[value].localization.ru,
+                    level: data.data[value].level,
+                    contour: data.data[value].icons.contour,
                 })
             }
         }
@@ -37,7 +39,15 @@ export const ShipOptions = () => {
         <div className='ship-options' >
             <ShipSearch />
             <div className='overflow-control'>
-                { shipList.map((ship) => <ShipTab key={+ship.id} shipId={+ship.id} shipName={ ship.name } />)}
+                { shipList.map((ship) => <ShipTab
+                    key={+ship.id}
+                    shipId={+ship.id}
+                    shipName={ ship.name }
+                    shipClass={ ship.type }
+                    shipLevel={ ship.level }
+                    shipContour={ ship.contour }
+                />)
+                }
             </div>
         </div>
     )
