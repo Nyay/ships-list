@@ -1,10 +1,10 @@
-import React from 'react';
+import React from 'react'
 import './ShipInfo.css'
-import { ShipTypeImgPath, shipLevels } from '../../../constants';
-import { IShipInfo } from './types';
+import { ShipTypeImgPath, shipLevels } from '../../../constants'
+import { type IShipInfo } from './types'
 
-export const ShipInfo = ({ shipName, shipClass, shipLevel, shipDescription }: IShipInfo) => {
-    return(
+export const ShipInfo = ({ shipName, shipClass, shipLevel, shipDescription }: IShipInfo): JSX.Element => {
+  return (
         <div className='ship-info'>
             <div className='ship-info-header'>
                 <h2 className='ship-info-header-text'>{ shipName }</h2>
@@ -15,5 +15,5 @@ export const ShipInfo = ({ shipName, shipClass, shipLevel, shipDescription }: IS
                 {shipDescription}
             </div>
         </div>
-    )
+  )
 }
