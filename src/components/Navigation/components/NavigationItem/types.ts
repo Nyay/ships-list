@@ -1,4 +1,4 @@
 export interface INavigationItem {
-    text: string,
-    selected?: boolean,
+  text: string
+  selected?: boolean
 }

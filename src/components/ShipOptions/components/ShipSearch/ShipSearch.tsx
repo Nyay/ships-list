@@ -1,21 +1,20 @@
-import React, { ChangeEvent, useCallback } from 'react';
-import './ShipSearch.css';
-import { debounce } from 'lodash';
-import {useDispatch} from "react-redux";
-import {setShipSearch} from "./shipSearchSlice";
+import React, { type ChangeEvent, useCallback } from 'react'
+import './ShipSearch.css'
+import { debounce } from 'lodash'
+import { useDispatch } from 'react-redux'
+import { setShipSearch } from './shipSearchSlice'
 
-export const ShipSearch = () => {
+export const ShipSearch = (): JSX.Element => {
+  const dispatch = useDispatch()
 
-    const dispatch = useDispatch();
+  const onChange = useCallback(debounce((event: ChangeEvent<HTMLInputElement>) => {
+    dispatch(setShipSearch({ value: event.target.value }))
+  }, 1000), [])
 
-    const onChange = useCallback(debounce(( event:ChangeEvent<HTMLInputElement> ) => {
-        dispatch(setShipSearch({value: event.target.value}))
-    }, 1000), [])
-
-    return (
+  return (
         <div className='ship-search'>
             <img className='ship-search-icon' src='src/shared/search.png' alt=''/>
             <input className='ship-search-input' onChange={onChange}/>
         </div>
-    )
+  )
 }

@@ -1,17 +1,17 @@
-import {createSlice, PayloadAction} from "@reduxjs/toolkit";
+import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
 
 interface IShipOption {
-    value: number
+  value: number
 }
 
 export const shipOptionsSlice = createSlice({
-    name: 'currentShip',
-    initialState: { value: 0 },
-    reducers: {
-        setCurrentShip: (state, action:PayloadAction<IShipOption>) => {
-            state.value = action.payload.value
-        }
+  name: 'currentShip',
+  initialState: { value: 0 },
+  reducers: {
+    setCurrentShip: (state, action: PayloadAction<IShipOption>) => {
+      state.value = action.payload.value
     }
+  }
 })
 
-export const { setCurrentShip } = shipOptionsSlice.actions;
+export const { setCurrentShip } = shipOptionsSlice.actions
