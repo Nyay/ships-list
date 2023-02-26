@@ -24,7 +24,9 @@ export const ShipTab = ({ shipName, shipId, shipClass, shipLevel, shipContour }:
             className={ classNames('ship-tab', { 'current-ship': isCurrentShip }) }
             onClick={ handleOnClick }
         >
-            { shipName }
+            <div className='ship-tab-name'>
+                { shipName }
+            </div>
             <div className='ship-tab-short-info'>
             { !isCurrentShip
               ? <>
