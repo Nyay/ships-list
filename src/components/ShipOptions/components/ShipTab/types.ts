@@ -2,7 +2,7 @@ import { type IShipClass, type IShipLevel } from '../../../ShipDisplay/component
 
 export interface IShipTab {
   shipName: string
-  shipId: number
+  shipId: string
   shipClass: IShipClass
   shipLevel: IShipLevel
   shipContour: string
