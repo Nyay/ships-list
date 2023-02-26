@@ -1,0 +1,19 @@
+.nation-filter {
+    min-height: 60px;
+    max-height: 60px;
+    padding: 0 27px;
+    position: sticky;
+    top: 0;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 32px;
+    display: flex;
+    overflow-x: scroll;
+    align-items: center;
+    gap: 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.nation-filter::-webkit-scrollbar {
+    display: none;
+}

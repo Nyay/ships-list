@@ -26,7 +26,8 @@ export const shipsData = createApi({
               name: shipData.localization.mark.ru,
               description: shipData.localization.description.ru,
               level: shipData.level,
-              contour: shipData.icons.contour
+              contour: shipData.icons.contour,
+              nation: shipData.nation
             })
           }
         }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavigationItem } from './components/NavigationItem/NavigationItem'
+import { NavigationItem } from './components'
 import './Navigation.css'
 import uniqid from 'uniqid'
 import { imgLink, navLabels } from './constants'

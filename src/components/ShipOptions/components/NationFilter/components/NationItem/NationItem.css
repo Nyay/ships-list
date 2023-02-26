@@ -1,0 +1,10 @@
+.nation-item {
+    color: var(--unselected-white);
+    white-space: nowrap;
+    text-space: small;
+    transition: color var(--nav-transition-timeout) ease-in;
+}
+
+.nation-item:hover, .current-nation {
+    color: var(--light-white);
+}

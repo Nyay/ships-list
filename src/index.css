@@ -4,6 +4,7 @@
     --main-background-blue: #102031;
     --menu-grey: #333333;
     --light-white: #FFFFFF;
+    --unselected-white: rgba(255, 255, 255, 0.3);
     --dark-white: #9a9a9a;
     --menu-cyan: #00cccc;
     --menu-cyan-transparent: #00cccc50;

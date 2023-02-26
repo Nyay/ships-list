@@ -3,9 +3,8 @@ import './ShipDisplay.css'
 import { useGetShipsDataQuery } from '../../services/shipsData'
 import { useSelector } from 'react-redux'
 import { type store } from '../../store/store'
-import { ShipImage } from './components/ShipImage/ShipImage'
+import { ShipImage, ShipInfo } from './components'
 import { type IShipClass, type IShipLevel } from './components/ShipInfo/types'
-import { ShipInfo } from './components/ShipInfo/ShipInfo'
 
 export const ShipDisplay = (): JSX.Element => {
   const { data } = useGetShipsDataQuery('')
