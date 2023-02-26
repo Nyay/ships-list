@@ -1,11 +1,15 @@
 .ship-tab {
+    display: flex;
+    align-items: center;
     min-height: 60px;
-    padding: 16px 56px;
+    min-width: 350px;
+    padding: 0 24px 0 56px;
     font-size: 24px;
     color: var(--dark-white);
     box-sizing: border-box;
     opacity: 1;
     transition: all 200ms ease-in;
+    justify-content: space-between;
 }
 
 .ship-tab:hover {
@@ -15,4 +19,23 @@
 .current-ship {
     background: var(--selected-tab-grey);
     color: var(--light-white);
+}
+
+.ship-tab-class {
+    height: 45px;
+}
+
+.ship-tab-counter {
+    width: 100%;
+    max-height: 20px;
+    transition: opacity 400ms ease-in;
+}
+
+.ship-tab-short-info {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    color: var(--light-white);
+    width: 85px;
+    justify-content: space-between;
 }

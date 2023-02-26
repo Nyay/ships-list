@@ -4,7 +4,8 @@ import {useGetShipsDataQuery} from "../../services/shipsData";
 import {useSelector} from "react-redux";
 import {store} from "../../store/store";
 import {ShipImage} from "./components/ShipImage/ShipImage";
-import {IShipClass, IShipLevel, ShipInfo} from "./components/ShipInfo/ShipInfo";
+import { IShipClass, IShipLevel } from './components/ShipInfo/types';
+import { ShipInfo } from './components/ShipInfo/ShipInfo'
 
 export const ShipDisplay = () => {
 
