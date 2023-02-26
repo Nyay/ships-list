@@ -1,8 +1,9 @@
 export enum ShipTypeImgPath {
-  'AirCarrier' = 'https://content-wg.gcdn.co/locdoc/wows/education/en/ship_types/carrier/aircraft_carrier.png',
-  'Battleship' = 'https://content-wg.gcdn.co/locdoc/wows/education/en/ship_types/battleship/battleship.png',
-  'Cruiser' = 'https://content-wg.gcdn.co/locdoc/wows/education/en/ship_types/cruiser/cruiser.png',
-  'Destroyer' = 'https://content-wg.gcdn.co/locdoc/wows/education/en/ship_types/destroyer/destroyer.png',
+  'AirCarrier' = 'src/shared/aircraft_carrier.png',
+  'Battleship' = 'src/shared/battleship.png',
+  'Cruiser' = 'src/shared/cruiser.png',
+  'Destroyer' = 'src/shared/destroyer.png',
+  'Submarine' = 'src/shared/submarine.png'
 }
 
 export const shipLevels = {
@@ -15,5 +16,6 @@ export const shipLevels = {
   7: 'VII',
   8: 'VIII',
   9: 'IX',
-  10: 'X'
+  10: 'X',
+  11: 'XI'
 }
