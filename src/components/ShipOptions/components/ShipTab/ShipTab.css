@@ -35,7 +35,10 @@
 .ship-tab-counter {
     width: 100%;
     max-height: 20px;
-    transition: opacity 400ms ease-in;
+    -webkit-animation: displayShipCounter 200ms linear;
+    -moz-animation: displayShipCounter 200ms linear;
+    -o-animation: displayShipCounter 200ms linear;
+    animation: displayShipCounter 200ms linear;
 }
 
 .ship-tab-short-info {
@@ -45,4 +48,40 @@
     color: var(--light-white);
     width: 85px;
     justify-content: space-between;
+}
+
+@-webkit-keyframes displayShipCounter {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes displayShipCounter {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes displayShipCounter {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes displayShipCounter {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }

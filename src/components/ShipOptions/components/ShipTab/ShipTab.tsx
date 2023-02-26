@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react'
+import React, { useCallback } from 'react'
 import './ShipTab.css'
 import { type IShipTab } from './types'
 import { useDispatch, useSelector } from 'react-redux'
@@ -8,8 +8,6 @@ import classNames from 'classnames'
 import { shipLevels, ShipTypeImgPath } from '../../../constants'
 
 export const ShipTab = ({ shipName, shipId, shipClass, shipLevel, shipContour }: IShipTab): JSX.Element => {
-  const [isIconLoaded, setIsIconLoaded] = useState(false)
-
   const currentShip = useSelector((state: ReturnType<typeof store.getState>) => state.setCurrentShip.value)
   const isCurrentShip = currentShip === shipId
 
@@ -41,10 +39,8 @@ export const ShipTab = ({ shipName, shipId, shipClass, shipLevel, shipContour }:
               : <img
                     alt={`${currentShip}_counter`}
                     key={`${currentShip}_counter`}
-                    style={ isIconLoaded ? {} : { opacity: 0 }}
                     className='ship-tab-counter'
                     src={`https://glossary-wows-global.gcdn.co/icons/${shipContour}`}
-                    onLoad={() => { setIsIconLoaded(true) }}
                 />
             }
             </div>
