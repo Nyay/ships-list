@@ -14,13 +14,13 @@ export const ShipDisplay = (): JSX.Element => {
   return ((!!currentShip && data)
     ? <div className='ship-display'>
             <ShipImage
-                shipImage={ `https://glossary-wows-global.gcdn.co/icons/${data.data[currentShip].icons.large}` }
-                nation={ data.data[currentShip].nation } />
+                shipImage={ `https://glossary-wows-global.gcdn.co/icons/${data.fullData[currentShip].icons.large}` }
+                nation={ data.fullData[currentShip].nation } />
             <ShipInfo
-                shipName={ data.data[currentShip].localization.mark.ru }
-                shipClass={ data.data[currentShip].tags[0] as IShipClass }
-                shipDescription={ data.data[currentShip].localization.description.ru }
-                shipLevel={ data.data[currentShip].level as IShipLevel }
+                shipName={ data.fullData[currentShip].localization.mark.ru }
+                shipClass={ data.fullData[currentShip].tags[0] as IShipClass }
+                shipDescription={ data.fullData[currentShip].localization.description.ru }
+                shipLevel={ data.fullData[currentShip].level as IShipLevel }
             />
         </div>
     : <></>

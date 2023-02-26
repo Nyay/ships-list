@@ -1,12 +1,12 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
 
 interface IShipOption {
-  value: number
+  value: string
 }
 
 export const shipOptionsSlice = createSlice({
   name: 'currentShip',
-  initialState: { value: 0 },
+  initialState: { value: '' },
   reducers: {
     setCurrentShip: (state, action: PayloadAction<IShipOption>) => {
       state.value = action.payload.value
