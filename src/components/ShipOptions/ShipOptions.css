@@ -4,8 +4,17 @@
     display: flex;
     flex-direction: column;
     overflow-y: scroll;
+    min-width: 300px;
+}
+
+.ship-options::-webkit-scrollbar {
+    display: none;
 }
 
 .overflow-control {
     overflow-y: scroll;
+}
+
+.overflow-control::-webkit-scrollbar {
+    display: none;
 }
