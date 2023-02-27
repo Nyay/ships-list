@@ -8,6 +8,8 @@ import { nationSelector } from './components/NationFilter/components/NationItem/
 import { searchSelector } from './shipOptionsSelectors'
 import { type IShipToList } from './types'
 import { classSelector } from './components/ClassFilter/components/ClassItem/classItemSelectors'
+import { LoadingIcon } from './components/LoadingIcon/LoadingIcon'
+import { emptySearch, errorText } from './constants'
 
 export const ShipOptions = (): JSX.Element => {
   const search = useSelector(searchSelector)
@@ -17,15 +19,16 @@ export const ShipOptions = (): JSX.Element => {
     shipName.name.toLowerCase().includes(search.toLowerCase()) &&
       (currentNation === 'all' || shipName.nation === currentNation) &&
       (currentClass === 'all' || shipName.class === currentClass)
-  const { data } = useGetShipsDataQuery('')
+  const { data, isLoading, error } = useGetShipsDataQuery('')
+  const isAnyShip = data?.shipsList.some((ship) => checkSearch(ship, search))
 
   return (
         <div className='ship-options' >
             <ShipSearch />
             <NationFilter />
             <ClassFilter />
-            <div className='overflow-control'>
-              { data?.shipsList.map((ship) => checkSearch(ship, search) && <ShipTab
+             <div className='overflow-control'>
+              { isAnyShip && data?.shipsList.map((ship) => checkSearch(ship, search) && <ShipTab
                   key={ ship.id }
                   shipId={ ship.id }
                   shipName={ ship.name }
@@ -33,7 +36,10 @@ export const ShipOptions = (): JSX.Element => {
                   shipLevel={ ship.level as IShipLevel }
                   shipContour={ ship.contour }
               />)}
-            </div>
+                 { error && <div className='sub-info-block'>{errorText}</div>}
+                 { !isAnyShip && !isLoading && !error && <div className='sub-info-block'>{emptySearch}</div>}
+             </div>
+            { isLoading && <div className='sub-info-block'><LoadingIcon /></div>}
         </div>
   )
 }
