@@ -1,0 +1,36 @@
+.filter-wrapper {
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.filter-header {
+    margin: 10px 0 -5px 27px;
+    color: var(--unselected-white);
+}
+
+.class-filter {
+    min-height: 60px;
+    max-height: 60px;
+    padding: 0 27px;
+    position: sticky;
+    top: 0;
+    font-size: 32px;
+    display: flex;
+    overflow-x: scroll;
+    align-items: center;
+    gap: 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-bottom: solid 1px var(--menu-grey);
+}
+
+.class-filter-img {
+    height: 60px;
+}
+
+.class-filter::-webkit-scrollbar {
+    display: none;
+}

@@ -1,0 +1,32 @@
+.ship-options {
+    grid-area: 2 / 1 / 3 / 2;
+    background: var(--light-black);
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    min-width: 300px;
+}
+
+.ship-options::-webkit-scrollbar {
+    display: none;
+}
+
+.overflow-control {
+    overflow-y: scroll;
+}
+
+.overflow-control::-webkit-scrollbar {
+    display: none;
+}
+
+.sub-info-block {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    color: var(--dark-white);
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    padding: 0 20px;
+    text-transform: uppercase;
+    text-align: center;
+}

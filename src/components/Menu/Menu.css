@@ -1,0 +1,14 @@
+.top-menu {
+    grid-area: 1 / 1 / 2 / 3;
+    min-height: 60px;
+    background: var(--menu-grey);
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu-logo {
+    width: 50px;
+    height: 50px;
+}
