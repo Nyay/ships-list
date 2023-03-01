@@ -1,8 +1,9 @@
 import React, { type ChangeEvent, useCallback } from 'react'
-import './ShipSearch.css'
 import { debounce } from 'lodash'
 import { useDispatch } from 'react-redux'
 import { setShipSearch } from './shipSearchSlice'
+import { ShipSearchIconStyled, ShipSearchInputStyled } from './components'
+import { ShipSearchStyled } from './ShipSearch.styled'
 
 export const ShipSearch = (): JSX.Element => {
   const dispatch = useDispatch()
@@ -12,9 +13,9 @@ export const ShipSearch = (): JSX.Element => {
   }, 1000), [])
 
   return (
-        <div className='ship-search'>
-            <img className='ship-search-icon' src='src/shared/search.png' alt=''/>
-            <input className='ship-search-input' onChange={onChange}/>
-        </div>
+        <ShipSearchStyled>
+            <ShipSearchIconStyled src='src/shared/search.png' alt=''/>
+            <ShipSearchInputStyled onChange={onChange}/>
+        </ShipSearchStyled>
   )
 }

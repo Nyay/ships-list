@@ -1,6 +1,13 @@
 import React from 'react'
-import './ShipOptions.css'
-import { ShipSearch, ShipTab, NationFilter, ClassFilter } from './components'
+import {
+  ShipSearch,
+  ShipTab,
+  NationFilter,
+  ClassFilter,
+  LoadingIcon,
+  OverflowControlStyled,
+  SubInfoBlockStyled
+} from './components'
 import { useSelector } from 'react-redux'
 import { useGetShipsDataQuery } from '../../services/shipsData'
 import { type IShipClass, type IShipLevel } from '../ShipDisplay/components/ShipInfo/types'
@@ -8,8 +15,8 @@ import { nationSelector } from './components/NationFilter/components/NationItem/
 import { searchSelector } from './shipOptionsSelectors'
 import { type IShipToList } from './types'
 import { classSelector } from './components/ClassFilter/components/ClassItem/classItemSelectors'
-import { LoadingIcon } from './components/LoadingIcon/LoadingIcon'
 import { emptySearch, errorText } from './constants'
+import { ShipOptionsStyled } from './ShipOptions.styled'
 
 export const ShipOptions = (): JSX.Element => {
   const search = useSelector(searchSelector)
@@ -23,11 +30,11 @@ export const ShipOptions = (): JSX.Element => {
   const isAnyShip = data?.shipsList.some((ship) => checkSearch(ship, search))
 
   return (
-        <div className='ship-options' >
+        <ShipOptionsStyled >
             <ShipSearch />
             <NationFilter />
             <ClassFilter />
-             <div className='overflow-control'>
+             <OverflowControlStyled>
               { isAnyShip && data?.shipsList.map((ship) => checkSearch(ship, search) && <ShipTab
                   key={ ship.id }
                   shipId={ ship.id }
@@ -36,10 +43,10 @@ export const ShipOptions = (): JSX.Element => {
                   shipLevel={ ship.level as IShipLevel }
                   shipContour={ ship.contour }
               />)}
-                 { error && <div className='sub-info-block'>{errorText}</div>}
-                 { !isAnyShip && !isLoading && !error && <div className='sub-info-block'>{emptySearch}</div>}
-             </div>
-            { isLoading && <div className='sub-info-block'><LoadingIcon /></div>}
-        </div>
+                 { error && <SubInfoBlockStyled>{errorText}</SubInfoBlockStyled>}
+                 { !isAnyShip && !isLoading && !error && <SubInfoBlockStyled>{emptySearch}</SubInfoBlockStyled>}
+             </OverflowControlStyled>
+            { isLoading && <SubInfoBlockStyled><LoadingIcon /></SubInfoBlockStyled>}
+        </ShipOptionsStyled>
   )
 }

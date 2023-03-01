@@ -1,5 +1,6 @@
 import React from 'react'
-import './ShipImage.css'
+import { ShipImageStyled } from './ShipImage.styled'
+import { ShipStyled, FlagStyled } from './components'
 
 interface IShipImage {
   shipImage: string
@@ -8,14 +9,16 @@ interface IShipImage {
 
 export const ShipImage = ({ shipImage, nation }: IShipImage): JSX.Element => {
   return (
-        <div className='ship-image-container'>
-            <img key={`${nation}_bg`} className='ship-nation-flag' src={`src/shared/${nation}.png`} alt=''/>
-            <img
+        <ShipImageStyled>
+            <FlagStyled
+                key={`${nation}_bg`}
+                alt={ nation }
+                src={`src/shared/${nation}.png`}/>
+            <ShipStyled
                 key={ shipImage }
-                className='ship-image'
                 alt=''
                 src={ shipImage }
             />
-        </div>
+        </ShipImageStyled>
   )
 }

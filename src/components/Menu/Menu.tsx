@@ -1,13 +1,12 @@
 import React from 'react'
-import './Menu.css'
-import { Navigation } from '../Navigation/Navigation'
-import { MenuButton } from './components'
+import { Navigation, MenuButton } from './components'
+import { MenuStyled } from './Menu.styled'
 
 export const Menu = (): JSX.Element => {
   return (
-        <div className='top-menu'>
+        <MenuStyled>
             <Navigation />
             <MenuButton />
-        </div>
+        </MenuStyled>
   )
 }
