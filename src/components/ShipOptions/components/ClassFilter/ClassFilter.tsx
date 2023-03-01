@@ -1,15 +1,15 @@
 import React from 'react'
-import './ClassFilter.css'
-import { ClassItem } from './components/ClassItem/ClassItem'
+import { ClassItem, ClassFilterHeaderStyled, ClassFilterItemListStyled } from './components'
 import { classList } from './constants'
+import { ClassFilterStyled } from './ClassFilter.styled'
 
 export const ClassFilter = (): JSX.Element => {
   return (
-      <div className='filter-wrapper'>
-          <div className='filter-header'>Класс корабля</div>
-          <div className='class-filter'>
+      <ClassFilterStyled>
+          <ClassFilterHeaderStyled>Класс корабля</ClassFilterHeaderStyled>
+          <ClassFilterItemListStyled>
               { classList.map((value) => <ClassItem key={`class_item_${value.name}`} classInfo={ value } />)}
-          </div>
-      </div>
+          </ClassFilterItemListStyled>
+      </ClassFilterStyled>
   )
 }

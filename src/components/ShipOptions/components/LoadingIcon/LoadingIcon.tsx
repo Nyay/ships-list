@@ -1,8 +1,8 @@
 import React from 'react'
-import './LoadingIcon.css'
+import { LoadingIconStyled } from './LoadingIcon.styled'
 
-export const LoadingIcon = (): JSX.Element => <div className="loading">
-    <div className="dot" />
-    <div className="dot" />
-    <div className="dot" />
-</div>
+export const LoadingIcon = (): JSX.Element => <LoadingIconStyled>
+    <div/>
+    <div/>
+    <div/>
+</LoadingIconStyled>

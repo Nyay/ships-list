@@ -1,14 +1,14 @@
-import './App.css'
 import { Menu, ShipDisplay, ShipOptions } from './components'
 import React from 'react'
+import { AppStyled } from './App.styled'
 
 function App (): JSX.Element {
   return (
-    <div className="App">
+    <AppStyled>
         <Menu />
         <ShipOptions />
         <ShipDisplay />
-    </div>
+    </AppStyled>
   )
 }
 

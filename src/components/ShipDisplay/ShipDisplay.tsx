@@ -1,17 +1,17 @@
 import React from 'react'
-import './ShipDisplay.css'
 import { useGetShipsDataQuery } from '../../services/shipsData'
 import { useSelector } from 'react-redux'
 import { type store } from '../../store/store'
 import { ShipImage, ShipInfo } from './components'
 import { type IShipClass, type IShipLevel } from './components/ShipInfo/types'
+import { ShipInfoDisplay } from './ShipInfo.display'
 
 export const ShipDisplay = (): JSX.Element => {
   const { data } = useGetShipsDataQuery('')
   const currentShip = useSelector((state: ReturnType<typeof store.getState>) => state.setCurrentShip.value)
 
   return ((!!currentShip && data)
-    ? <div className='ship-display'>
+    ? <ShipInfoDisplay>
             <ShipImage
                 shipImage={ `https://glossary-wows-global.gcdn.co/icons/${data.fullData[currentShip].icons.large}` }
                 nation={ data.fullData[currentShip].nation } />
@@ -21,7 +21,7 @@ export const ShipDisplay = (): JSX.Element => {
                 shipDescription={ data.fullData[currentShip].localization.description.ru }
                 shipLevel={ data.fullData[currentShip].level as IShipLevel }
             />
-        </div>
+        </ShipInfoDisplay>
     : <></>
   )
 }
